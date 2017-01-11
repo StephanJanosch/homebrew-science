@@ -6,7 +6,7 @@ class Vcftools < Formula
 
   url "https://github.com/vcftools/vcftools/archive/v0.1.13.tar.gz"
   sha256 "0e241da57bc7048161d3751a1be842ad36e6a43f803c91cc9ef18aa15b3fc85e"
-
+  revision 1
   head "https://github.com/vcftools/vcftools.git"
 
   bottle do
@@ -18,6 +18,7 @@ class Vcftools < Formula
   end
 
   depends_on "homebrew/dupes/zlib" => :optional
+  depends_on "htslib"
 
   def install
     args = %W[PREFIX=#{prefix} CPP=#{ENV.cxx}]
